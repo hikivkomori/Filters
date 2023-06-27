@@ -60,3 +60,9 @@ const showProducts = (filteredData) => {
     </div>`
     ).join("");
 };
+
+const showCategory = () => {
+    const allCategory = data.map((item) => item.category)
+    const categories = ['all', ...new Set(allCategory)];
+    categoriesContainer.innerHTML = categories.map((item) => `   <div class="category">${item}</div>`).join("");
+};
