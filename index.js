@@ -89,3 +89,20 @@ allCategories.forEach((item) => {
         showProducts(filterdD)
     })
 })
+
+const showMinMax = () => {
+    const allPrice = data.map(item => item.price);
+    const maxPrice = Math.max(...allPrice);
+    const minPrice = Math.min(...allPrice);
+    rangeInput.min = minPrice;
+    rangeInput.max = maxPrice;
+    rangepercen.textContent = 0;
+    rangeInput.addEventListener('input', (e) => {
+        const value = e.target.value
+        showProducts(data.filter((item) => item.price <= value))
+        rangepercen.textContent =`$${value}`
+
+    })
+}
+showMinMax()
+showProducts(data)
