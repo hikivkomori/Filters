@@ -76,3 +76,16 @@ input.addEventListener('keyup', (e) => {
         showProducts(data)
     }
 });
+
+showCategory();
+
+const allCategories = document.querySelectorAll('.category');
+
+allCategories.forEach((item) => {
+    item.addEventListener('click', (e) => {
+        const text = e.target.textContent.toLocaleLowerCase();
+        if(text === 'all') return showProducts(data)
+        const filterdD = data.filter((item) => item.category.toLocaleLowerCase()=== text)
+        showProducts(filterdD)
+    })
+})
