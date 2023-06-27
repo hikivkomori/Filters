@@ -66,3 +66,13 @@ const showCategory = () => {
     const categories = ['all', ...new Set(allCategory)];
     categoriesContainer.innerHTML = categories.map((item) => `   <div class="category">${item}</div>`).join("");
 };
+
+input.addEventListener('keyup', (e) => {
+    const value = e.target.value.toLocaleLowerCase();
+    if(value) {
+        const filterdD = data.filter((item) => item.name.toLocaleLowerCase().includes(value))
+        showProducts(filterdD)
+    }else{
+        showProducts(data)
+    }
+});
