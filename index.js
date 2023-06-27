@@ -42,3 +42,9 @@ const data = [
         category:'glass'
     },
 ];
+
+const productsContainer = document.querySelector('.products');
+const input = document.querySelector('input');
+const categoriesContainer = document.querySelector('.categories');
+const rangeInput = document.querySelector('.range');
+const rangepercen = document.querySelector('.rangepercen');
