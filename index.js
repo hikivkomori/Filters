@@ -48,3 +48,15 @@ const input = document.querySelector('input');
 const categoriesContainer = document.querySelector('.categories');
 const rangeInput = document.querySelector('.range');
 const rangepercen = document.querySelector('.rangepercen');
+
+const showProducts = (filteredData) => {
+    productsContainer.innerHTML = filteredData.map((item) => `<div class="product">
+    <div class='image'><img
+      src=${item.src}
+      alt=""
+    /></div>
+    <div class="name">${item.name}</div>
+    <div class="price">price: ${item.price}$</div>
+    </div>`
+    ).join("");
+};
